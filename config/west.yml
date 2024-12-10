@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: inorichi
       url-base: https://github.com/inorichi
+    - name: teamspatzenhirn
+      url-base: https://github.com/teamspatzenhirn
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -11,6 +13,10 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: inorichi
+      revision: 837e0ab2182d8748b46bf188f03c7dde4d4e0328
+    - name: pmw3389_zephyr_driver
+      remote: teamspatzenhirn
       revision: main
+      path: modules/pmw3389
   self:
     path: config
