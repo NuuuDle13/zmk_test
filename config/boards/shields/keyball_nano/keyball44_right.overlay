@@ -48,24 +48,22 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
 
-    trackball: trackball@0 {
+    motion_sensor: pmw3389@0 {
         status = "okay";
-        compatible = "pixart,pmw3610";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
+        compatible = "pixart,pmw3389";
+        reg = <10>; // адрес устройства
+        spi-max-frequency = <2000000>; // 2 MHz
+        resolution = <200>; // CPI настройки
         irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	scroll-layers = <5>;
-	snipe-layers = <6>;
-	automouse-layer = <4>;
-        /*   reference if intends to map the behaviro more than 1 layer   */
-        // scroll-layers = <2 3>;
+        scroll-layers = <5>;
+        snipe-layers = <6>;
+        automouse-layer = <4>;
     };
 };
 
 / {
   trackball_listener {
     compatible = "zmk,input-listener";
-    device = <&trackball>;
-
+    device = <&motion_sensor>;
   };
 };
