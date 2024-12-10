@@ -53,7 +53,6 @@
         compatible = "pixart,pmw3389";
         reg = <10>; // адрес устройства
         spi-max-frequency = <2000000>; // 2 MHz
-        resolution = <200>; // CPI настройки
         irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         scroll-layers = <5>;
         snipe-layers = <6>;
