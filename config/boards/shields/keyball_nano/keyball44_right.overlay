@@ -48,7 +48,7 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
 
-    motion_sensor: pmw3389@0 {
+    trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3389";
         reg = <10>; // адрес устройства
@@ -64,6 +64,6 @@
 / {
   trackball_listener {
     compatible = "zmk,input-listener";
-    device = <&motion_sensor>;
+    device = <&trackball>;
   };
 };
